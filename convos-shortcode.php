@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Custom ShortCodes by Alex Lundin
  * Author:      Alex Lundin
- * Version:     1.1.1
+ * Version:     1.1.2
  * Description: Custom Shortcodes for text
  * License:     GPL2
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -10,11 +10,17 @@
  */
 
 require 'plugin-update-checker/plugin-update-checker.php';
-$MyUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
-    'https://alexlundin.com/wp-update-server?action=get_metadata&slug=custom-shortcode-by-alex-lundin', //Metadata URL.
-    __FILE__, //Full path to the main plugin file.
-    'custom-shortcode-by-alex-lundin' //Plugin slug. Usually it's the same as the name of the directory.
+$myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
+	'https://github.com/alexlundin/convos-shortcode/',
+	__FILE__,
+	'convos-shortcode'
 );
+
+// //Optional: If you're using a private repository, specify the access token like this:
+// $myUpdateChecker->setAuthentication('your-token-here');
+
+//Optional: Set the branch that contains the stable release.
+// $myUpdateChecker- > > setBranch('master');
 
 add_shortcode("plus_h", function ($args = null, $content = null) {
     return "<div class='h3'>✅ {$content}</div>";
