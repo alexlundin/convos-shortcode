@@ -1,7 +1,7 @@
 (function () {
 
 	let url = window.location.hostname;
-	let path = '/wp-content/plugins/custom-shortcode-by-alex-lundin/img/';
+	let path = '/wp-content/plugins/custom-shortcode/assets/img/';
 	let full = '//' + url + path;
 
     tinymce.create('tinymce.plugins.CustomShort', {

@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Custom ShortCodes by Alex Lundin
  * Author:      Alex Lundin
- * Version:     1.1.3
+ * Version:     1.2
  * Description: Custom Shortcodes for text
  * License:     GPL2
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -55,26 +55,28 @@ function add_css()
     global $post;
 
     /* Регистрируем таблицу стилей */
-    wp_register_style('customShortcodes', plugin_dir_url(__FILE__) . 'css/styles.css');
+//    wp_register_style('customShortcodes', plugin_dir_url(__FILE__) . 'assets/css/styles.css');
+    wp_register_style('customShortcodes', plugins_url( 'elementor/assets/styles.css', __FILE__ ));
+    wp_register_style('fontawesome', '//stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
 
 
     /* Проверяем нет присутствует ли в записи шорткод, если да то выводит css */
-    if ( has_shortcode($post->post_content, 'plus_h') ||
-         has_shortcode($post->post_content, 'minus_h') ||
-         has_shortcode($post->post_content, 'gray') ||
-         has_shortcode($post->post_content, 'purple_bd') ||
-         has_shortcode($post->post_content, 'purple_bg') ||
-         has_shortcode($post->post_content, 'gradient_bd') ||
-         has_shortcode($post->post_content, 'gradient_bg') ||
-         has_shortcode($post->post_content, 'gradient_color')
-    ) {
-        wp_enqueue_style('customShortcodes');
-    }
+//    if ( has_shortcode($post->post_content, 'plus_h') ||
+//         has_shortcode($post->post_content, 'minus_h') ||
+//         has_shortcode($post->post_content, 'gray') ||
+//         has_shortcode($post->post_content, 'purple_bd') ||
+//         has_shortcode($post->post_content, 'purple_bg') ||
+//         has_shortcode($post->post_content, 'gradient_bd') ||
+//         has_shortcode($post->post_content, 'gradient_bg') ||
+//         has_shortcode($post->post_content, 'gradient_color')
+//    ) {
+//        wp_enqueue_style('customShortcodes');
+//    }
 }
 
 
 add_action("admin_enqueue_scripts", function () {
-    wp_enqueue_script("custom_shortcode_btn", plugin_dir_url(__FILE__) . 'js/custom_short_btns.js', array('wp-tinymce-root'), null , true);
+    wp_enqueue_script("custom_shortcode_btn", plugin_dir_url(__FILE__) . 'assets/js/custom_short_btns.js', array('wp-tinymce-root'), null , true);
 });
 add_action( 'admin_init', function () {
     if ( current_user_can( 'edit_posts' ) && current_user_can( 'edit_pages' ) ) {
@@ -83,7 +85,7 @@ add_action( 'admin_init', function () {
             return $buttons;
         });
         add_filter( 'mce_external_plugins', function ($plugin_array) {
-            $plugin_array['custom_shortcodes'] =  plugin_dir_url(__FILE__) .'js/custom_short_btns.js';
+            $plugin_array['custom_shortcodes'] =  plugin_dir_url(__FILE__) .'assets/js/custom_short_btns.js';
             return $plugin_array;
         });
     }
@@ -91,3 +93,24 @@ add_action( 'admin_init', function () {
 
 
 
+// Elementor
+
+function add_elementor_widget_categories( $elements_manager ) {
+
+    $elements_manager->add_category(
+        'convos_category',
+        [
+            'title' => __( 'Custom Widgets', 'elementor-text-extension' ),
+            'icon' => 'fa fa-plug',
+        ]
+    );
+
+}
+add_action( 'elementor/elements/categories_registered', 'add_elementor_widget_categories' );
+
+
+require 'elementor/elementor-extension.php';
+
+
+//print_r(plugin_dir_url(__FILE__) . 'elementor/elementor__widget.php');
+//die;
