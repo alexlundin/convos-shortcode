@@ -16,7 +16,7 @@
 }
 
 
-.custom_text_widget .plus, .minus{
+.plus, .minus{
     width: 50%;
     vertical-align: baseline;
 }
@@ -83,7 +83,7 @@
     width: 100%;
 }
 
-.custom_text_widget blockquote {
+blockquote {
     padding: 20px 30px;
     margin-right: 0;
     margin-left: 0;
@@ -94,27 +94,27 @@
     width: 100%;
 }
 
-.custom_text_widget p {
+p {
     margin: 0;
     padding: 0;
 }
 
-.custom_text_widget .h3 {
+.h3 {
     display: flex;
     align-items: center;
 }
 
-.custom_text_widget .h3 span {
+.h3 span {
     margin-left: 10px;
 }
 
-.custom_text_widget .p_bd {
+.p_bd {
     border: 6px solid #62000F;
     margin: 30px auto;
     display: inline-block;
 }
 
-.custom_text_widget .ng_bd {
+.ng_bd {
     color: #000000;
     background-color: rgba(232, 208, 218, 0.89);
     /* IE9, iOS 3.2+ */
@@ -128,13 +128,13 @@
 }
 
 
-.custom_text_widget .check {
+.check {
     background: #def9e5;
     padding: 20px 30px 20px 70px;
     border-left: none !important;
 }
 
-.custom_text_widget .check::before {
+.check::before {
     content: "\f058";
     font-family: 'FontAwesome', serif;
     color: #34bc58;
@@ -146,13 +146,13 @@
     text-rendering: auto;
 }
 
-.custom_text_widget .warning {
+.warning {
     background: #fff4d4;
     padding: 20px 30px 20px 70px;
     border-left: none !important;
 }
 
-.custom_text_widget .warning::before {
+.warning::before {
     content: "\f06a";
     font-family: 'FontAwesome', serif;
     color: #f58128;
@@ -164,13 +164,13 @@
     text-rendering: auto;
 }
 
-.custom_text_widget .info {
+.info {
     background: #e3f1f4;
     border-left: none !important;
     padding: 20px 30px 20px 70px;
 }
 
-.custom_text_widget .info::before {
+.info::before {
     content: "\f059";
     font-family: 'FontAwesome', serif;
     color: #3da2e0;
@@ -182,13 +182,13 @@
     text-rendering: auto;
 }
 
-.custom_text_widget .danger {
+.danger {
     background: #ffe3db;
     padding: 20px 30px 20px 70px;
     border-left: none !important;
 }
 
-.custom_text_widget .danger::before {
+.danger::before {
     content: "\f057";
     font-family: 'FontAwesome', serif;
     color: #ff6547;
@@ -200,13 +200,13 @@
     text-rendering: auto;
 }
 
-.custom_text_widget .quote {
+.quote {
     background: #eff4f5;
     padding: 20px 30px 20px 70px;
     border-left: none !important;
 }
 
-.custom_text_widget .quote::before {
+.quote::before {
     content: "\f10d";
     font-family: 'FontAwesome', serif;
     top: 25px;
@@ -218,20 +218,20 @@
     text-rendering: auto;
 }
 
-.custom_text_widget .gr_color {
+.gr_color {
     color: #ffffff;
     display: block;
     box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.25);
     background: linear-gradient(180deg, rgba(0, 0, 0, 0) 32.86%, rgba(0, 0, 0, 0.4) 129.29%), linear-gradient(203.19deg, #F57C00 -0.01%, #EB00FF 115.47%);
 }
 
-.custom_text_widget .p_bg {
+.p_bg {
     background-color: #62000F;
     color: #fff;
     display: inline-block;
 }
 
-.custom_text_widget .ng_bg {
+.ng_bg {
     color: #000000;
     background-color: rgba(232, 208, 218, 0.89);
     /* IE9, iOS 3.2+ */
@@ -244,6 +244,6 @@
     background-image: -ms-repeating-linear-gradient(top left, rgba(204, 204, 255, 0.8) 0%, rgba(239, 209, 209, 0.85) 20%, rgb(239, 209, 209) 50%, rgba(239, 209, 209, 0.85) 80%, rgba(204, 204, 255, 0.8) 100%);
 }
 
-.custom_text_widget .gray_table {
+.gray_table {
     background-color: #dedede;
 }
