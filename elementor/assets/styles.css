@@ -102,6 +102,14 @@ p {
 .h3 {
     display: flex;
     align-items: center;
+    padding: 20px 30px;
+    margin-right: 0;
+    margin-left: 0;
+    box-sizing: border-box;
+    font-size: 100%;
+    border-radius: 0 6px 6px 0;
+    position: relative;
+    width: 100%;
 }
 
 .h3 span {
@@ -112,6 +120,12 @@ p {
     border: 6px solid #62000F;
     margin: 30px auto;
     display: inline-block;
+    padding: 20px 30px;
+    box-sizing: border-box;
+    font-size: 100%;
+    border-radius: 0 6px 6px 0;
+    position: relative;
+    width: 100%;
 }
 
 .ng_bd {
@@ -229,6 +243,14 @@ p {
     background-color: #62000F;
     color: #fff;
     display: inline-block;
+    padding: 20px 30px;
+    margin-right: 0;
+    margin-left: 0;
+    box-sizing: border-box;
+    font-size: 100%;
+    border-radius: 0 6px 6px 0;
+    position: relative;
+    width: 100%;
 }
 
 .ng_bg {
