@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Custom ShortCodes by Alex Lundin
  * Author:      Alex Lundin
- * Version:     1.2.3
+ * Version:     1.2.4
  * Description: Custom Shortcodes for text
  * License:     GPL2
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -76,7 +76,7 @@ function add_css()
 
 
 add_action("admin_enqueue_scripts", function () {
-    wp_enqueue_script("custom_shortcode_btn", plugin_dir_url(__FILE__) . 'assets/js/custom_short_btns.js', array('wp-tinymce-root'), null , true);
+    wp_enqueue_script("custom_shortcode_btn", plugin_dir_url(__FILE__) . 'assets/js/custom_short_btns.js', array('wp-tinymce-root'), '1.2.4' , true);
 });
 add_action( 'admin_init', function () {
     if ( current_user_can( 'edit_posts' ) && current_user_can( 'edit_pages' ) ) {
