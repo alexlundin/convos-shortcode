@@ -1,69 +1,65 @@
 (function () {
-
-	let url = window.location.hostname;
-	let path = '/wp-content/plugins/custom-shortcode/assets/img/';
-	let full = '//' + url + path;
-
     tinymce.create('tinymce.plugins.CustomShort', {
         init : function(editor, url) {
+            url = url.replace("/js","/")
             editor.addButton('plus', {
-                image: full + 'head_plus_icon.png',
+                image: url + 'img/head_plus_icon.png',
                 title: 'Цитата с плюсом',
                 onclick: function () {
                     editor.insertContent('[plus_h]' + editor.selection.getContent() + '[/plus_h]');
                 }
             });
             editor.addButton('minus', {
-                image: full + 'head_minus_icon.png',
+                image: url + 'img/head_minus_icon.png',
                 title: 'Цитата с минусом',
                 onclick: function () {
                     editor.insertContent('[minus_h]' + editor.selection.getContent() + '[/minus_h]');
                 }
             });
             editor.addButton('gray', {
-                image: full + 'gray_icon.png',
+                image: url + 'img/gray_icon.png',
                 title: 'Текст на сером фоне',
                 onclick: function () {
                     editor.insertContent('[gray]' + editor.selection.getContent() + '[/gray]');
                 }
             });
             editor.addButton('purple_border', {
-                image: full + 'border_text.png',
+                image: url + 'img/border_text.png',
                 title: 'Текст с фиолетовой обводкой',
                 onclick: function () {
                     editor.insertContent('[purple_bd]' + editor.selection.getContent() + '[/purple_bd]');
                 }
             });
             editor.addButton('purple_background', {
-                image: full + 'bg_text.png',
+                image: url + 'img/bg_text.png',
                 title: 'Текст на фиолетовом фоне',
                 onclick: function () {
                     editor.insertContent('[purple_bg]' + editor.selection.getContent() + '[/purple_bg]');
                 }
             });
             editor.addButton('gradient_border', {
-                image: full + 'bd_gradient.png',
+                image: url + 'img/bd_gradient.png',
                 title: 'Текст с градиентоной обводкой',
                 onclick: function () {
                     editor.insertContent('[gradient_bd]' + editor.selection.getContent() + '[/gradient_bd]');
                 }
             });
             editor.addButton('gradient_background', {
-                image: full +  'bg_gradient_u.png',
+                image: url + 'img/bg_gradient_u.png',
                 title: 'Текст на градиентоном фоне',
                 onclick: function () {
                     editor.insertContent('[gradient_bg]' + editor.selection.getContent() + '[/gradient_bg]');
                 }
             });
             editor.addButton('light_gradient', {
-                image: full + 'bg_color.png',
+                image: url + 'img/bg_color.png',
                 title: 'Текст на градиентоном фоне',
                 onclick: function () {
                     editor.insertContent('[gradient_color]' + editor.selection.getContent() + '[/gradient_color]');
                 }
             });
             editor.addButton('custom_table', {
-                image: full + 'table_icon.png',
+                image: url + 'img/table_icon.png',
                 title: 'Таблица плюсов и минусов',
                 onclick: function () {
                     editor.windowManager.open({
