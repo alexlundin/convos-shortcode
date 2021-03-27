@@ -91,26 +91,20 @@ add_action( 'admin_init', function () {
     }
 } );
 
+if ( is_plugin_active( 'elementor/elementor.php' ) ) {
+    function add_elementor_widget_categories( $elements_manager ) {
+
+        $elements_manager->add_category(
+            'convos_category',
+            [
+                'title' => __( 'Custom Widgets', 'elementor-text-extension' ),
+                'icon' => 'fa fa-plug',
+            ]
+        );
+
+    }
+    add_action( 'elementor/elements/categories_registered', 'add_elementor_widget_categories' );
 
 
-// Elementor
-
-function add_elementor_widget_categories( $elements_manager ) {
-
-    $elements_manager->add_category(
-        'convos_category',
-        [
-            'title' => __( 'Custom Widgets', 'elementor-text-extension' ),
-            'icon' => 'fa fa-plug',
-        ]
-    );
-
+    require 'elementor/elementor-extension.php';
 }
-add_action( 'elementor/elements/categories_registered', 'add_elementor_widget_categories' );
-
-
-require 'elementor/elementor-extension.php';
-
-
-//print_r(plugin_dir_url(__FILE__) . 'elementor/elementor__widget.php');
-//die;
