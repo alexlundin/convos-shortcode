@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Custom ShortCodes by Alex Lundin
  * Author:      Alex Lundin
- * Version:     1.2.57
+ * Version:     1.2.58
  * Description: Custom Shortcodes for text
  * License:     GPL2
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -45,7 +45,7 @@ add_action('wp_enqueue_scripts', 'add_css');
 
 function add_css()
 {
-    wp_enqueue_style('customShortcodes', plugins_url( 'elementor/assets/styles.css', __FILE__ ));
+    wp_enqueue_style('customShortcodes', plugins_url( 'elementor/assets/styles.css', __FILE__ ), null, '1.4');
     wp_enqueue_style('fontawesome', '//stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
 }
 
