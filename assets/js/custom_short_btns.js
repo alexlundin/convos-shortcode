@@ -117,25 +117,25 @@
                                     <thead>
                                         <tr>
                                             <td class="plus">
-                                                <h3 class="h3"><i>✅</i><span>{{e.data.head_plus}}</span></h3>
+                                                <h3 class="h3"><i>✅</i><span>${e.data.head_plus}</span></h3>
                                             </td>
                                             <td class="minus">
-                                                <h3 class="h3"><i>⛔</i><span>{{e.data.head_minus}}</span></h3>
+                                                <h3 class="h3"><i>⛔</i><span>${e.data.head_minus}</span></h3>
                                             </td>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
                                             <td class="plus">
-                                                {{e.data.text_plus}}
+                                                ${e.data.text_plus}
                                             </td>
                                             <td class="minus">
-                                                {{e.data.text_minus}}
+                                                ${e.data.text_minus}
                                             </td>
                                         </tr>
                                         <tr class="gray_table">
                                             <td colspan=2>
-                                                {{e.data.gray}}
+                                                ${e.data.gray}
                                             </td>
                                         </tr>
                                     </tbody>
