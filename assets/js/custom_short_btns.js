@@ -1,7 +1,7 @@
 (function () {
     tinymce.create('tinymce.plugins.CustomShort', {
-        init : function(editor, url) {
-            url = url.replace("/js","/")
+        init: function (editor, url) {
+            url = url.replace("/js", "/")
             editor.addButton('plus', {
                 image: url + 'img/head_plus_icon.png',
                 title: 'Цитата с плюсом',
@@ -113,35 +113,63 @@
                         ],
                         onsubmit: function (e) { // это будет происходить после заполнения полей и нажатии кнопки отправки
                             editor.insertContent(
-                                '<table cellpadding="0" cellspacing="0" width="100%" class="asl_custom_t">\n' +
-                                '<tbody>\n' +
-                                '<tr>\n' +
-
-                                '<td class="plus">\n' +
-                                '<div class="h3">✅ ' + e.data.head_plus + '</div>\n' +
-                                e.data.text_plus +
-                                '</td>\n' +
-                                '<td class="minus">\n' +
-                                '<div class="h3">⛔' + e.data.head_minus + '</div>\n' +
-                                e.data.text_minus +
-                                '</td>\n' +
-                                '</tr>\n' +
-                                '<tr class="gray_table">\n' +
-                                '<td colspan=2>\n' +
-                                e.data.gray +
-                                '</td>\n' +
-                                '</tr>\n' +
-                                '</tbody>\n' +
-                                '</table>\n');
+                                `<table cellpadding="0" cellspacing="0" width="100%" class="asl_custom_t">
+                                    <thead>
+                                        <tr>
+                                            <td class="plus">
+                                                <h3 class="h3"><i>✅</i><span>{{e.data.head_plus}}</span></h3>
+                                            </td>
+                                            <td class="minus">
+                                                <h3 class="h3"><i>⛔</i><span>{{e.data.head_minus}}</span></h3>
+                                            </td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="plus">
+                                                {{e.data.text_plus}}
+                                            </td>
+                                            <td class="minus">
+                                                {{e.data.text_minus}}
+                                            </td>
+                                        </tr>
+                                        <tr class="gray_table">
+                                            <td colspan=2>
+                                                {{e.data.gray}}
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                 </table>`
+                            )
+                            // '<table cellpadding="0" cellspacing="0" width="100%" class="asl_custom_t">\n' +
+                            // '<tbody>\n' +
+                            // '<tr>\n' +
+                            //
+                            // '<td class="plus">\n' +
+                            // '<div class="h3">✅ ' + e.data.head_plus + '</div>\n' +
+                            // e.data.text_plus +
+                            // '</td>\n' +
+                            // '<td class="minus">\n' +
+                            // '<div class="h3">⛔' + e.data.head_minus + '</div>\n' +
+                            // e.data.text_minus +
+                            // '</td>\n' +
+                            // '</tr>\n' +
+                            // '<tr class="gray_table">\n' +
+                            // '<td colspan=2>\n' +
+                            //  +
+                            // '</td>\n' +
+                            // '</tr>\n' +
+                            // '</tbody>\n' +
+                            // '</table>\n');
                         }
                     });
                 }
             });
         },
-        createControl : function(n, cm) {
+        createControl: function (n, cm) {
             return null;
         },
     });
     /* Start the buttons */
-    tinymce.PluginManager.add( 'custom_shortcodes', tinymce.plugins.CustomShort );
+    tinymce.PluginManager.add('custom_shortcodes', tinymce.plugins.CustomShort);
 })();

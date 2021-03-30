@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Custom ShortCodes by Alex Lundin
  * Author:      Alex Lundin
- * Version:     1.2.53
+ * Version:     1.2.54
  * Description: Custom Shortcodes for text
  * License:     GPL2
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -15,12 +15,6 @@ $myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
 	__FILE__,
 	'convos-shortcode'
 );
-
-// //Optional: If you're using a private repository, specify the access token like this:
-// $myUpdateChecker->setAuthentication('your-token-here');
-
-//Optional: Set the branch that contains the stable release.
-// $myUpdateChecker- > > setBranch('master');
 
 add_shortcode("plus_h", function ($args = null, $content = null) {
     return "<div class='h3'>✅ {$content}</div>";
@@ -51,25 +45,8 @@ add_action('wp_enqueue_scripts', 'add_css');
 
 function add_css()
 {
-
-    /* Регистрируем таблицу стилей */
-//    wp_register_style('customShortcodes', plugin_dir_url(__FILE__) . 'assets/css/styles.css');
     wp_enqueue_style('customShortcodes', plugins_url( 'elementor/assets/styles.css', __FILE__ ));
     wp_enqueue_style('fontawesome', '//stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
-
-
-    /* Проверяем нет присутствует ли в записи шорткод, если да то выводит css */
-//    if ( has_shortcode($post->post_content, 'plus_h') ||
-//         has_shortcode($post->post_content, 'minus_h') ||
-//         has_shortcode($post->post_content, 'gray') ||
-//         has_shortcode($post->post_content, 'purple_bd') ||
-//         has_shortcode($post->post_content, 'purple_bg') ||
-//         has_shortcode($post->post_content, 'gradient_bd') ||
-//         has_shortcode($post->post_content, 'gradient_bg') ||
-//         has_shortcode($post->post_content, 'gradient_color')
-//    ) {
-//        wp_enqueue_style('customShortcodes');
-//    }
 }
 
 
@@ -102,7 +79,5 @@ if ( is_plugin_active( 'elementor/elementor.php' ) ) {
 
     }
     add_action( 'elementor/elements/categories_registered', 'add_elementor_widget_categories' );
-
-
     require 'elementor/elementor-extension.php';
 }
