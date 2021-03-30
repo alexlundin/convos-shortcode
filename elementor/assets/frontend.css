@@ -9,6 +9,10 @@
     text-align: left;
 }
 
+.asl_custom_t thead .h3 {
+    margin: 0 auto !important;
+}
+
 .asl_custom_t  .h3 i {
     font-style: normal;
     margin-right: 8px;
