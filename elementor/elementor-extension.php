@@ -141,7 +141,7 @@ final class Elementor_Text_Extension
     public function widget_styles() {
 
         wp_register_style('fontawesome', plugins_url( 'assets/font-awesome/css/font-awesome.min.css', __FILE__ ));
-        wp_register_style( 'text_widgets', plugins_url( 'assets/styles.css', __FILE__ ) );
+        wp_register_style( 'text_widgets', plugins_url( 'assets/frontend.css', __FILE__ ) );
         wp_enqueue_style('fontawesome');
         wp_enqueue_style('text_widgets');
 
