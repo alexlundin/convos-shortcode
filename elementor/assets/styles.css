@@ -8,6 +8,12 @@
 .asl_custom_t{
     text-align: left;
 }
+
+.h3 i {
+    font-style: normal;
+    margin-right: 8px;
+}
+
 .entry-content .plus ul > li:before{
     background: #4AAE4E;
 }

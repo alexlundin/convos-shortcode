@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Custom ShortCodes by Alex Lundin
  * Author:      Alex Lundin
- * Version:     1.2.56
+ * Version:     1.2.57
  * Description: Custom Shortcodes for text
  * License:     GPL2
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
