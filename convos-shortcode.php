@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Custom ShortCodes by Alex Lundin
  * Author:      Alex Lundin
- * Version:     1.2.51
+ * Version:     1.2.52
  * Description: Custom Shortcodes for text
  * License:     GPL2
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -47,17 +47,15 @@ add_shortcode("gradient_color", function ($args = null, $content = null) {
     return "<span class='gr_color'> {$content} </span>";
 });
 
-add_action('wp', 'add_css');
+add_action('wp_enqueue_scripts', 'add_css');
 
 function add_css()
 {
-    /* Получаем глобальную переменную $post */
-    global $post;
 
     /* Регистрируем таблицу стилей */
 //    wp_register_style('customShortcodes', plugin_dir_url(__FILE__) . 'assets/css/styles.css');
-    wp_register_style('customShortcodes', plugins_url( 'elementor/assets/styles.css', __FILE__ ));
-    wp_register_style('fontawesome', '//stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+    wp_enqueue_style('customShortcodes', plugins_url( 'elementor/assets/styles.css', __FILE__ ));
+    wp_enqueue_style('fontawesome', '//stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
 
 
     /* Проверяем нет присутствует ли в записи шорткод, если да то выводит css */
